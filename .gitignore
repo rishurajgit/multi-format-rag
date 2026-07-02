@@ -1,0 +1,20 @@
+# Virtual Environment
+.venv/
+
+# Environment Variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# ChromaDB
+chroma_db/
+chroma.sqlite3
+
+# Uploaded Files
+uploads/*
+!uploads/.gitkeep
+
+# VS Code
+.vscode/
