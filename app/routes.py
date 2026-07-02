@@ -25,9 +25,11 @@ async def upload_pdf(file: UploadFile = File(...)):
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
-    total_chunks = document_service.process_pdf(file_path)
+    result = total_chunks = document_service.process_pdf(file_path)
 
     return {
         "message": "PDF uploaded successfully",
-        "chunks": total_chunks,
+        "document_name": result["document_name"],
+        "total_pages": result["total_pages"],
+        "total_chunks": result["total_chunks"]
     }
