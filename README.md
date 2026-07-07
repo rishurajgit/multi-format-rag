@@ -32,49 +32,6 @@ A Retrieval-Augmented Generation (RAG) application built with **FastAPI**, **Lan
 - Pydantic Settings
 - UV Package Manager
 
----
-
-## Project Structure
-
-```text
-multi-format-rag/
-│
-├── app/
-│   ├── core/
-│   │   └── prompt.py
-│   │
-│   ├── db/
-│   │   └── chroma_db.py
-│   │
-│   ├── loaders/
-│   │   └── document_loader.py
-│   │
-│   ├── processing/
-│   │   └── splitter.py
-│   │
-│   ├── schemas/
-│   │   └── chat_schema.py
-│   │
-│   ├── services/
-│   │   ├── document_service.py
-│   │   ├── embedding_service.py
-│   │   ├── retriever_service.py
-│   │   └── rag_service.py
-│   │
-│   └── routes.py
-│
-├── uploads/
-│
-├── config.py
-├── main.py
-├── .env.example
-├── pyproject.toml
-├── uv.lock
-└── README.md
-```
-
----
-
 ## Installation
 
 ### Clone the Repository
@@ -104,9 +61,9 @@ Example:
 ```env
 GEMINI_API_KEY=your_api_key
 
-LLM_MODEL=gemini-2.5-flash
+LLM_MODEL=your_Model_name
 
-EMBEDDING_MODEL=gemini-embedding-2-preview
+EMBEDDING_MODEL=your_embedding_model
 
 CHUNK_SIZE=1000
 CHUNK_OVERLAP=200
