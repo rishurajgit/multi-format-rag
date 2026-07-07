@@ -33,3 +33,18 @@ async def upload_pdf(file: UploadFile = File(...)):
         "total_pages": result["total_pages"],
         "total_chunks": result["total_chunks"]
     }
+    
+from app.schemas.chat_schema import ChatRequest
+from app.services.rag_service import RAGService
+
+rag_service = RAGService()
+
+@router.post("/chat")
+
+async def chat(request: ChatRequest):
+    
+    response = rag_service.generate_response(
+        request.question
+    )
+    
+    return response
